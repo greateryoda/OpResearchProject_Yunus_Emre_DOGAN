@@ -5,6 +5,7 @@ public class Main {
             return;
         }
 
+        // Read graph from file
         java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(args[0]));
         String[] firstLine = br.readLine().trim().split(" ");
         int num_nodes = Integer.parseInt(firstLine[0]);
@@ -33,14 +34,14 @@ public class Main {
         new java.io.File("out").mkdirs();
         graph1.write_graphviz("out/ford_fulkerson.gv");
 
-        // Min Cost Flow - Bellman-Ford
+        // Min Cost Flow (Bellman-Ford)
         MinCostGraph graph2 = new MinCostGraph(num_nodes);
         graph2.S = noeuds[s]; graph2.T = noeuds[t];
         for(int[] a : arc_data) graph2.add_arc(new Arc(noeuds[a[0]], noeuds[a[1]], a[2], a[3]));
         System.out.println("Min Cost Flow (Bellman-Ford): " + graph2.min_cost_flow_bellman_ford());
         graph2.write_graphviz("out/min_cost_bellman.gv");
 
-        // Min Cost Flow - Dijkstra
+        // Min Cost Flow (Dijkstra)
         MinCostGraph graph3 = new MinCostGraph(num_nodes);
         graph3.S = noeuds[s]; graph3.T = noeuds[t];
         for(int[] a : arc_data) graph3.add_arc(new Arc(noeuds[a[0]], noeuds[a[1]], a[2], a[3]));
