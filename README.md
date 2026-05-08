@@ -15,4 +15,4 @@ Etudiant: Yunus Emre DOGAN
 
 ### Execution
     La syntaxe generale: java -cp bin Main Examples/<nom_fichier>
-    Example: java -cp bin Main Examples/graph_data.txt
+    Example: java -cp bin Main Examples/moyen_graph.txt

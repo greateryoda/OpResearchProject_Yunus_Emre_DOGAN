@@ -1,0 +1,5 @@
+venv/
+out/
+!out/.gitkeep
+bin/*
+!bin/.gitkeep

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         if(args.length != 1){
@@ -31,6 +33,11 @@ public class Main {
         graph1.S = noeuds[s]; graph1.T = noeuds[t];
         for(int[] a : arc_data) graph1.add_arc(new Arc(noeuds[a[0]], noeuds[a[1]], a[2], a[3]));
         System.out.println("Max Flow (Ford-Fulkerson): " + graph1.ford_fulkerson());
+        ArrayList<Arc> cut = graph1.min_cut();
+        System.out.println("Min Cut: ");
+        for(Arc arc : cut){
+            System.out.println("  " + arc);
+        }
         new java.io.File("out").mkdirs();
         graph1.write_graphviz("out/ford_fulkerson.gv");
 

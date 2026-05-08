@@ -27,14 +27,6 @@ class Arc{
         return this.max_capacity;
     }
 
-    int get_flow(){
-        return this.flow;
-    }
-
-    void set_flow(int flow){
-        this.flow = flow;
-    }
-
     int get_residual_capacity(){
         return this.max_capacity - this.flow;
     }
