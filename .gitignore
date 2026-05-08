@@ -1,5 +1,5 @@
 venv/
-out/
-!out/.gitkeep
 bin/*
 !bin/.gitkeep
+out/*
+!out/.gitkeep
