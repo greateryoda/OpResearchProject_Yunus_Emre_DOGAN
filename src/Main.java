@@ -7,7 +7,7 @@ public class Main {
             return;
         }
 
-        // Read graph from file
+        // Lire a partir du fichier
         java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(args[0]));
         String[] firstLine = br.readLine().trim().split(" ");
         int num_nodes = Integer.parseInt(firstLine[0]);
